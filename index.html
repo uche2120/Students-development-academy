@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="description" content="St. Mary's Academy - Excellence in Education. Nurturing tomorrow's leaders through innovative primary and secondary education in Nigeria.">
+    <meta name="keywords" content="best private school Nigeria, top primary school Lagos, secondary school Nigeria, quality education">
+    <title>St. Mary's Academy - Excellence in Education | Best Private School in Nigeria</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP for advanced animations (loaded conditionally) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#1e40af', // Deeper blue for better Nigerian context
+                            700: '#1e3a8a',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                        nigeria: {
+                            green: '#008751',
+                            white: '#ffffff',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'morph': 'morph 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        morph: {
+                            '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                            '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+   
+</head>
+<body class="font-sans text-gray-800 bg-white overflow-x-hidden antialiased">
+
+    <!-- Particle Background (desktop only) -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0 overflow-hidden hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-100 header-visible">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer touch-feedback" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg transform transition-transform hover:scale-110 hover:rotate-3 emotion-hover flex-shrink-0">S</div>
+                    <div class="hidden sm:block min-w-0">
+                        <h1 class="font-display font-bold text-lg sm:text-xl text-primary-900 tracking-tight truncate">St. Mary's Academy</h1>
+                        <p class="text-xs text-gray-500 font-medium truncate">Excellence in Education</p>
+                    </div>
+                    <div class="sm:hidden">
+                        <h1 class="font-display font-bold text-lg text-primary-900">St. Mary's</h1>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition text-sm lg:text-base py-2">About</a>
+                    <a href="#programs" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition text-sm lg:text-base py-2">Programs</a>
+                    <a href="#campus" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition text-sm lg:text-base py-2">Campus</a>
+                    <a href="#achievements" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition text-sm lg:text-base py-2">Achievements</a>
+                    <a href="#news" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition text-sm lg:text-base py-2">News</a>
+                    <a href="#contact" class="px-6 py-2.5 btn-primary text-white rounded-full font-medium text-sm shadow-lg ripple touch-feedback whitespace-nowrap">Apply Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden touch-feedback flex flex-col justify-center items-center space-y-1.5 p-2 w-12 h-12 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu" aria-expanded="false">
+                    
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300" aria-hidden="true"></div>
+
+        <!-- Mobile Menu Slide-out -->
+        <div id="mobile-menu" class="mobile-menu-slide fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 md:hidden overflow-y-auto" role="dialog" aria-modal="true" aria-label="Mobile menu">
+            <div class="p-6 space-y-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="font-display font-bold text-xl text-primary-900">Menu</h3>
+                    <button id="close-menu-btn" class="touch-feedback p-2 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition" aria-label="Close menu">
+                        <i class="fas fa-times text-2xl text-gray-600"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-2">
+                    <a href="#about" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-info-circle text-primary-500 w-6 text-center"></i> About
+                    </a>
+                    <a href="#programs" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-graduation-cap text-primary-500 w-6 text-center"></i> Programs
+                    </a>
+                    <a href="#campus" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-school text-primary-500 w-6 text-center"></i> Campus Life
+                    </a>
+                    <a href="#achievements" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-trophy text-primary-500 w-6 text-center"></i> Achievements
+                    </a>
+                    <a href="#news" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-newspaper text-primary-500 w-6 text-center"></i> News
+                    </a>
+                    <a href="#contact" class="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl font-medium transition text-lg touch-feedback flex items-center gap-3">
+                        <i class="fas fa-envelope text-primary-500 w-6 text-center"></i> Contact
+                    </a>
+                </div>
+                
+                <div class="pt-6 border-t border-gray-200">
+                    <a href="#contact" class="block w-full px-6 py-4 bg-primary-600 text-white rounded-xl font-semibold text-center text-lg touch-feedback ripple shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="pt-6">
+                    <p class="text-sm text-gray-500 mb-4">Connect with us</p>
+                    <div class="flex space-x-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition touch-feedback" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition touch-feedback" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition touch-feedback" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition touch-feedback" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="pt-6 border-t border-gray-200">
+                    <div class="flex items-center gap-3 text-sm text-gray-600">
+                        <i class="fas fa-phone text-primary-600"></i>
+                        <span>+234 (0) 801 234 5678</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-gray-600 mt-2">
+                        <i class="fas fa-envelope text-primary-600"></i>
+                        <span>info@stmarysacademy.edu.ng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2348012345678" target="_blank" rel="noopener" class="whatsapp-float touch-feedback emotion-hover" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-blue-50 pt-20 sm:pt-24 pb-12">
+            <!-- Animated Background Blobs - reduced for mobile -->
+            <div class="blob bg-primary-300 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full top-20 -left-20 animate-morph hidden sm:block"></div>
+            <div class="blob bg-blue-300 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bottom-20 right-10 hidden sm:block"></div>
+            <div class="blob bg-indigo-200 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full top-1/2 left-1/3 hidden md:block"></div>
+            
+            <!-- Mobile-optimized background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-100/50 via-white to-blue-100/30 sm:hidden"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+                <!-- Text Content -->
+                <div class="space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1 hero-content">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-semibold text-xs sm:text-sm animate-pulse-slow cursor-pointer hover:bg-primary-200 transition touch-feedback shadow-sm" onclick="showToast('Applications open for 2025-2026 session!')">
+                        <span class="w-2 h-2 bg-primary-600 rounded-full mr-2 animate-ping flex-shrink-0"></span>
+                        <span>Now Enrolling for 2025-2026</span>
+                    </div>
+                    
+                    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-gray-900 hero-title px-2 sm:px-0">
+                        Shaping Tomorrow's <span class="text-gradient">Leaders</span> Today
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0 hero-subtitle px-4 sm:px-0">
+                        Providing exceptional primary and secondary education that nurtures creativity, critical thinking, and character development in a supportive learning environment.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-buttons px-4 sm:px-0">
+                        <a href="#contact" class="px-6 sm:px-8 py-3.5 sm:py-4 btn-primary text-white rounded-full font-semibold text-base sm:text-lg shadow-xl text-center ripple touch-feedback emotion-hover w-full sm:w-auto">
+                            Schedule a Tour
+                        </a>
+                        <a href="#programs" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-primary-600 border-2 border-primary-600 rounded-full font-semibold text-base sm:text-lg hover:bg-primary-50 transition text-center touch-feedback group w-full sm:w-auto flex items-center justify-center gap-2">
+                            Explore Programs <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 sm:space-x-6 pt-4 hero-social px-4 sm:px-0">
+                        <div class="flex -space-x-2 sm:-space-x-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-md transition-transform hover:scale-110 hover:z-10 object-cover" alt="Student" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-md transition-transform hover:scale-110 hover:z-10 object-cover" alt="Student" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-md transition-transform hover:scale-110 hover:z-10 object-cover" alt="Student" loading="lazy">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-primary-600 flex items-center justify-center text-white text-xs font-bold shadow-md flex-shrink-0">+2k</div>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-semibold text-gray-900 text-sm sm:text-base">2,500+ Students</p>
+                            <p class="text-xs sm:text-sm text-gray-500">Trusted by parents across Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative lg:h-[600px] flex items-center justify-center order-1 lg:order-2 hero-image-container px-4 sm:px-0">
+                    <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg floating-card">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-400 to-blue-500 rounded-3xl transform rotate-3 opacity-20 animate-pulse-slow hidden sm:block"></div>
+                        <img src="https://epe.brightspotcdn.com/dims4/default/058ed48/2147483647/strip/true/crop/2949x2001+26+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2F4a%2F7d%2Fa0c5cd4e47c38228548a26d1782b%2Fprivate-school-elementary-students-042025-2175339358.jpg" alt="Students learning together in classroom" class="relative rounded-3xl shadow-2xl w-full object-cover h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] image-mask" loading="eager" fetchpriority="high">
+                        
+                        <!-- Floating Stats Card - Mobile optimized -->
+                        <div class="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-white p-3 sm:p-6 rounded-2xl shadow-xl glass animate-float touch-feedback hover:scale-105 transition-transform cursor-pointer hidden sm:block" onclick="animateCounter(this)">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <div class="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center text-yellow-600 animate-bounce-slow flex-shrink-0">
+                                    <i class="fas fa-trophy text-sm sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lg sm:text-2xl text-gray-900 stats-counter" data-target="98">0</p>
+                                    <p class="text-xs sm:text-sm text-gray-500">% Graduation Rate</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 2 -->
+                        <div class="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-white p-3 sm:p-6 rounded-2xl shadow-xl glass animate-float-slow touch-feedback hover:scale-105 transition-transform cursor-pointer hidden sm:block" style="animation-delay: -3s;">
+                            <div class="flex items-center space-x-2 sm:space-x-3">
+                                <div class="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center text-green-600 animate-spin-slow flex-shrink-0">
+                                    <i class="fas fa-star text-sm sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lg sm:text-2xl text-gray-900">A+</p>
+                                    <p class="text-xs sm:text-sm text-gray-500">Academic Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-4 sm:bottom-8 left-1/2 scroll-indicator cursor-pointer touch-feedback hidden sm:block" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                <div class="flex flex-col items-center gap-2 group">
+                    <span class="text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Scroll</span>
+                    <div class="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center pt-2 group-hover:border-primary-600 transition-colors">
+                        <div class="w-1.5 h-3 bg-gray-400 rounded-full animate-bounce group-hover:bg-primary-600 transition-colors"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <!-- ===== BEAUTIFUL STATS SECTION - COPY & PASTE READY ===== -->
+<style>
+/* Unique namespace to avoid conflicts - using 'us' prefix (university stats) */
+.us-container {
+  --us-primary: #0f2b4b;
+  --us-primary-light: #1e3a5f;
+  --us-accent: #3b82f6;
+  --us-gold: #fbbf24;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.us-section {
+  position: relative;
+  isolation: isolate;
+  padding: 5rem 1rem;
+  background: linear-gradient(145deg, #0a1a2f 0%, #0e2a41 50%, #0a1a2f 100%);
+  color: white;
+  overflow: hidden;
+}
+
+/* Abstract background shapes */
+.us-bg-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.us-bg-shape-1 {
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: usFloat 20s infinite alternate ease-in-out;
+}
+
+.us-bg-shape-2 {
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: usFloat 25s infinite alternate-reverse ease-in-out;
+}
+
+.us-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.us-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+/* Content wrapper */
+.us-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.us-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.us-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.us-header-line {
+  width: 6rem;
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--us-accent), var(--us-gold));
+  margin: 0 auto;
+  border-radius: 9999px;
+}
+
+/* Stats grid */
+.us-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .us-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Stat card */
+.us-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.us-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+              rgba(255,255,255,0.15) 0%, 
+              transparent 80%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.us-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.us-card:hover::before {
+  opacity: 1;
+}
+
+/* Card shine effect */
+.us-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.6s;
+  pointer-events: none;
+}
+
+.us-card:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Stat number */
+.us-number {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.us-number span {
+  background: linear-gradient(135deg, var(--us-accent), var(--us-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.us-suffix {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--us-accent), var(--us-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+}
+
+/* Stat label */
+.us-label {
+  font-size: clamp(0.75rem, 3vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+.us-card:hover .us-label {
+  color: #f1f5f9;
+}
+
+/* Footer text */
+.us-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.us-footer p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.us-footer strong {
+  color: var(--us-gold);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes usFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(5%, 5%) rotate(5deg); }
+}
+
+@keyframes usPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes usGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.us-pulse {
+  animation: usPulse 4s infinite ease-in-out;
+}
+
+/* Loading state */
+.us-card.loading .us-number {
+  background: linear-gradient(90deg, #2d3748, #4a5568, #2d3748);
+  background-size: 200% 100%;
+  animation: usShimmer 1.5s infinite;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes usShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Mouse move effect */
+.us-card {
+  --x: 50%;
+  --y: 50%;
+}
+</style>
+
+<div class="us-container">
+  <section class="us-section">
+    <!-- Background effects -->
+    <div class="us-bg-pattern">
+      <div class="us-bg-shape-1"></div>
+      <div class="us-bg-shape-2"></div>
+      <div class="us-bg-grid"></div>
+      <div class="us-bg-dots"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="us-wrapper">
+      <!-- Header -->
+      <div class="us-header">
+        <h2>By the Numbers</h2>
+        <div class="us-header-line"></div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="us-grid">
+        <!-- Card 1: Years -->
+        <div class="us-card" data-count="25">
+          <div class="us-number">
+            <span class="us-stat">0</span>
+            <span class="us-suffix">+</span>
+          </div>
+          <div class="us-label">Years of Excellence</div>
+        </div>
+
+        <!-- Card 2: Faculty -->
+        <div class="us-card" data-count="50">
+          <div class="us-number">
+            <span class="us-stat">0</span>
+            <span class="us-suffix">+</span>
+          </div>
+          <div class="us-label">Expert Faculty</div>
+        </div>
+
+        <!-- Card 3: Programs -->
+        <div class="us-card" data-count="30">
+          <div class="us-number">
+            <span class="us-stat">0</span>
+            <span class="us-suffix">+</span>
+          </div>
+          <div class="us-label">Academic Programs</div>
+        </div>
+
+        <!-- Card 4: Ratio -->
+        <div class="us-card" data-count="15">
+          <div class="us-number">
+            <span class="us-stat">15</span>
+            <span class="us-suffix">:1</span>
+          </div>
+          <div class="us-label">Student-Teacher Ratio</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="us-footer">
+        <p>
+          <strong>25+ years</strong> of shaping futures • 
+          <strong>98%</strong> graduate satisfaction • 
+          <strong>Global</strong> alumni network
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Counting Animation Script -->
+<script>
+(function() {
+  'use strict';
+  
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    // Check if elements exist
+    const cards = document.querySelectorAll('.us-card[data-count]');
+    if (!cards.length) return;
+
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const statElement = card.querySelector('.us-stat');
+          const target = parseInt(card.dataset.count);
+          
+          if (statElement && !isNaN(target) && !card.classList.contains('us-counted')) {
+            // Mark as counted
+            card.classList.add('us-counted');
+            
+            // Animate the number
+            animateNumber(statElement, target, 2000);
+          }
+          
+          // Unobserve after animation starts
+          observer.unobserve(card);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '50px'
+    });
+
+    // Observe each card
+    cards.forEach(card => observer.observe(card));
+
+    // Mouse move effect for cards
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--x', `${x}%`);
+        card.style.setProperty('--y', `${y}%`);
+      });
+    });
+  }
+
+  // Number animation function
+  function animateNumber(element, target, duration) {
+    let start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    function update() {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target;
+        
+        // Celebration effect
+        element.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+          element.style.transform = 'scale(1)';
+        }, 200);
+      } else {
+        element.textContent = Math.floor(current);
+        requestAnimationFrame(update);
+      }
+    }
+    
+    requestAnimationFrame(update);
+  }
+
+  // Fallback for browsers without Intersection Observer
+  if (!window.IntersectionObserver) {
+    const cards = document.querySelectorAll('.us-card[data-count]');
+    cards.forEach(card => {
+      const statElement = card.querySelector('.us-stat');
+      const target = parseInt(card.dataset.count);
+      if (statElement && !isNaN(target)) {
+        animateNumber(statElement, target, 2000);
+      }
+    });
+  }
+})();
+</script>
+<!-- ===== END STATS SECTION ===== -->
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-20 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    <!-- Image Grid -->
+                    <div class="relative reveal order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="space-y-3 sm:space-y-4 transform translate-y-4 sm:translate-y-8">
+                                <div class="image-hover-zoom rounded-2xl shadow-lg overflow-hidden touch-feedback">
+                                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=500&fit=crop" class="w-full h-40 sm:h-48 md:h-64 object-cover" alt="Students learning" loading="lazy">
+                                </div>
+                                <div class="image-hover-zoom rounded-2xl shadow-lg overflow-hidden touch-feedback">
+                                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=500&fit=crop" class="w-full h-40 sm:h-48 md:h-64 object-cover" alt="Students in class" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="space-y-3 sm:space-y-4">
+                                <div class="image-hover-zoom rounded-2xl shadow-lg overflow-hidden touch-feedback">
+                                    <img src="https://images.unsplash.com/photo-1427504740703-4f4b8f5d6f5f?w=400&h=500&fit=crop" class="w-full h-40 sm:h-48 md:h-64 object-cover" alt="Classroom activities" loading="lazy">
+                                </div>
+                                <div class="image-hover-zoom rounded-2xl shadow-lg overflow-hidden touch-feedback">
+                                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=500&fit=crop" class="w-full h-40 sm:h-48 md:h-64 object-cover" alt="School activities" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="absolute -z-10 -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-primary-100 rounded-full opacity-50 animate-pulse-slow hidden sm:block"></div>
+                        <div class="absolute -z-10 -top-4 -left-4 w-16 h-16 sm:w-24 sm:h-24 bg-blue-100 rounded-full opacity-50 animate-pulse-slow hidden sm:block" style="animation-delay: -2s;"></div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="space-y-4 sm:space-y-6 reveal order-1 lg:order-2">
+                        <div class="inline-block">
+                            <h2 class="text-primary-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">About Our School</h2>
+                            <div class="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary-600 to-blue-400 rounded-full"></div>
+                        </div>
+                        <h3 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                            Nurturing Potential, <br><span class="text-gradient">Building Character</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                            At St. Mary's Academy, we believe every child has unique potential waiting to be unlocked. Our holistic approach combines rigorous academics with character development, ensuring students graduate not just with knowledge, but with the values and skills to make a positive impact on Nigeria and the world.
+                        </p>
+                        
+                        <div class="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-primary-50 transition-colors group cursor-pointer touch-feedback">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center text-primary-600 flex-shrink-0 group-hover:scale-110 transition-transform emotion-hover">
+                                    <i class="fas fa-graduation-cap text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-base sm:text-lg mb-1 group-hover:text-primary-700 transition">Academic Excellence</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Comprehensive curriculum designed to challenge and inspire every learner.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-pink-50 transition-colors group cursor-pointer touch-feedback">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl flex items-center justify-center text-pink-600 flex-shrink-0 group-hover:scale-110 transition-transform emotion-hover">
+                                    <i class="fas fa-heart text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-base sm:text-lg mb-1 group-hover:text-pink-700 transition">Character Development</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Building integrity, empathy, and leadership skills for life success.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-green-50 transition-colors group cursor-pointer touch-feedback">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0 group-hover:scale-110 transition-transform emotion-hover">
+                                    <i class="fas fa-users text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-base sm:text-lg mb-1 group-hover:text-green-700 transition">Community Focus</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Inclusive environment where every student belongs and thrives.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-4 sm:mt-6 px-6 sm:px-8 py-3 sm:py-3.5 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 touch-feedback ripple emotion-hover text-sm sm:text-base w-full sm:w-auto justify-center sm:justify-start">
+                            Learn Our Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16 reveal px-4">
+                    <h2 class="text-primary-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">Academic Programs</h2>
+                    <h3 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">Comprehensive Education Pathways</h3>
+                    <p class="text-gray-600 text-sm sm:text-base lg:text-lg">From early childhood through high school, we offer programs that cater to every stage of your child's educational journey.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
+                    <!-- Primary School -->
+                    <div class="gradient-border bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg card-hover reveal group cursor-pointer touch-feedback" onclick="showProgramDetails('primary')">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center text-blue-600 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 emotion-hover">
+                            <i class="fas fa-child text-xl sm:text-2xl lg:text-3xl group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Primary School</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 line-clamp-3">Grades 1-5: Building strong foundations in literacy, numeracy, and social skills through play-based and structured learning.</p>
+                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-gray-600 text-xs sm:text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Phonics & Reading</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> STEM Introduction</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Arts & Music</li>
+                        </ul>
+                        <button class="text-primary-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform text-xs sm:text-sm">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Middle School -->
+                    <div class="gradient-border bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg card-hover reveal group cursor-pointer touch-feedback" onclick="showProgramDetails('middle')" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center text-indigo-600 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 emotion-hover">
+                            <i class="fas fa-book-reader text-xl sm:text-2xl lg:text-3xl group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Middle School</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 line-clamp-3">Grades 6-8: Transitioning to independent learning with specialized subjects and extracurricular exploration.</p>
+                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-gray-600 text-xs sm:text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Advanced Mathematics</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Laboratory Sciences</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Digital Literacy</li>
+                        </ul>
+                        <button class="text-primary-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform text-xs sm:text-sm">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- High School -->
+                    <div class="gradient-border bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg card-hover reveal group cursor-pointer touch-feedback md:col-span-2 lg:col-span-1" onclick="showProgramDetails('high')" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center text-purple-600 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 emotion-hover">
+                            <i class="fas fa-user-graduate text-xl sm:text-2xl lg:text-3xl group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">High School</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 line-clamp-3">Grades 9-12: College preparatory curriculum with AP courses, career counseling, and leadership opportunities.</p>
+                        <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-gray-600 text-xs sm:text-sm">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> AP & Honors Courses</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> College Counseling</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2 sm:mr-3 flex-shrink-0"></i> Internship Programs</li>
+                        </ul>
+                        <button class="text-primary-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform text-xs sm:text-sm">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Life Section -->
+        <section id="campus" class="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    <!-- Content -->
+                    <div class="space-y-4 sm:space-y-6 reveal order-2 lg:order-1">
+                        <div class="inline-block">
+                            <h2 class="text-primary-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">Campus Life</h2>
+                            <div class="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary-600 to-blue-400 rounded-full"></div>
+                        </div>
+                        <h3 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                            Beyond the <span class="text-gradient">Classroom</span>
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                            Education extends far beyond textbooks. Our vibrant campus offers diverse extracurricular activities, state-of-the-art facilities, and a supportive community that fosters growth in every aspect of student life.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 pt-4 sm:pt-6">
+                            <div class="flex items-start space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition group cursor-pointer touch-feedback">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center text-orange-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-futbol text-sm sm:text-lg lg:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base mb-0.5 sm:mb-1">Athletics</h4>
+                                    <p class="text-xs text-gray-600 leading-tight">15+ sports teams</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition group cursor-pointer touch-feedback">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl flex items-center justify-center text-pink-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-palette text-sm sm:text-lg lg:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base mb-0.5 sm:mb-1">Arts & Culture</h4>
+                                    <p class="text-xs text-gray-600 leading-tight">Theater & music</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition group cursor-pointer touch-feedback">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-robot text-sm sm:text-lg lg:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base mb-0.5 sm:mb-1">STEM Clubs</h4>
+                                    <p class="text-xs text-gray-600 leading-tight">Robotics & coding</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition group cursor-pointer touch-feedback">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-hands-helping text-sm sm:text-lg lg:text-xl"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base mb-0.5 sm:mb-1">Community</h4>
+                                    <p class="text-xs text-gray-600 leading-tight">Leadership programs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="openVirtualTour()" class="mt-4 sm:mt-6 lg:mt-8 px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition shadow-lg hover:shadow-xl flex items-center justify-center sm:justify-start gap-2 touch-feedback ripple w-full sm:w-auto text-sm sm:text-base emotion-hover">
+                            <i class="fas fa-vr-cardboard text-lg"></i>
+                            Take Virtual Tour
+                        </button>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="relative reveal order-1 lg:order-2">
+                        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group cursor-pointer image-hover-zoom touch-feedback" onclick="openVirtualTour()">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop" alt="School campus facilities" class="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4 sm:p-6 lg:p-8">
+                                <div class="text-white w-full">
+                                    <p class="font-semibold text-base sm:text-lg lg:text-xl mb-1 sm:mb-2 flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt text-primary-400"></i>
+                                        Interactive Campus Tour
+                                    </p>
+                                    <p class="text-white/80 text-xs sm:text-sm lg:text-base">Explore our 50-acre campus with state-of-the-art facilities</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/95 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl ripple emotion-hover">
+                                <i class="fas fa-play text-primary-600 text-lg sm:text-xl lg:text-2xl ml-1"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative floating elements -->
+                        <div class="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-primary-100 rounded-full opacity-60 -z-10 animate-pulse-slow hidden sm:block"></div>
+                        <div class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-yellow-100 rounded-full opacity-60 -z-10 animate-pulse-slow hidden sm:block" style="animation-delay: -3s;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-16 sm:py-20 lg:py-24 bg-primary-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-blue-900 to-indigo-900"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16 reveal px-4">
+                    <h2 class="text-primary-300 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">Our Achievements</h2>
+                    <h3 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Excellence Recognized</h3>
+                    <p class="text-primary-100 text-sm sm:text-base lg:text-lg">Our commitment to quality education has earned us numerous accolades and recognition in the academic community.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
+                    <div class="glass-dark p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl text-center reveal hover:bg-white/10 transition-all duration-300 cursor-pointer group touch-feedback border border-white/10 emotion-hover">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-trophy text-2xl sm:text-3xl lg:text-4xl text-yellow-400 group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold mb-2">National Excellence Award</h4>
+                        <p class="text-primary-200 text-xs sm:text-sm lg:text-base mb-3 sm:mb-4 leading-relaxed">Recognized as one of the top 50 schools nationwide for academic achievement and innovation.</p>
+                        <span class="text-yellow-400 font-semibold text-xs sm:text-sm">2024 Recipient</span>
+                    </div>
+
+                    <div class="glass-dark p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl text-center reveal hover:bg-white/10 transition-all duration-300 cursor-pointer group touch-feedback border border-white/10 emotion-hover" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-leaf text-2xl sm:text-3xl lg:text-4xl text-green-400 group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold mb-2">Green Campus Initiative</h4>
+                        <p class="text-primary-200 text-xs sm:text-sm lg:text-base mb-3 sm:mb-4 leading-relaxed">Platinum certification for sustainable practices and environmental education programs.</p>
+                        <span class="text-green-400 font-semibold text-xs sm:text-sm">Eco-Schools Nigeria</span>
+                    </div>
+
+                    <div class="glass-dark p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl text-center reveal hover:bg-white/10 transition-all duration-300 cursor-pointer group touch-feedback border border-white/10 emotion-hover" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-flask text-2xl sm:text-3xl lg:text-4xl text-blue-400 group-hover:animate-wiggle"></i>
+                        </div>
+                        <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold mb-2">STEM Innovation Hub</h4>
+                        <p class="text-primary-200 text-xs sm:text-sm lg:text-base mb-3 sm:mb-4 leading-relaxed">Leading center for science and technology education with state-of-the-art laboratories.</p>
+                        <span class="text-blue-400 font-semibold text-xs sm:text-sm">Certified Excellence</span>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="mt-12 sm:mt-16 lg:mt-20 grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
+                    <div class="glass-dark p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl reveal border border-white/10 hover:border-white/20 transition touch-feedback">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border-2 border-primary-400 mr-3 sm:mr-4 object-cover flex-shrink-0" alt="Parent" loading="lazy">
+                            <div class="min-w-0">
+                                <p class="font-semibold text-sm sm:text-base truncate">Mrs. Sarah Johnson</p>
+                                <p class="text-primary-300 text-xs sm:text-sm truncate">Parent of Grade 8 Student</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-100 italic text-xs sm:text-sm lg:text-base leading-relaxed">"St. Mary's has transformed my daughter's approach to learning. The teachers are dedicated, and the community is incredibly supportive. We've seen remarkable growth in her confidence and academic performance."</p>
+                        <div class="flex text-yellow-400 mt-3 sm:mt-4 text-xs sm:text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="glass-dark p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl reveal border border-white/10 hover:border-white/20 transition touch-feedback" style="transition-delay: 100ms;">
+                        <div class="flex items-center mb-3 sm:mb-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border-2 border-primary-400 mr-3 sm:mr-4 object-cover flex-shrink-0" alt="Alumni" loading="lazy">
+                            <div class="min-w-0">
+                                <p class="font-semibold text-sm sm:text-base truncate">Michael Chen</p>
+                                <p class="text-primary-300 text-xs sm:text-sm truncate">Class of 2023, Now at MIT</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-100 italic text-xs sm:text-sm lg:text-base leading-relaxed">"The preparation I received at St. Mary's was exceptional. The AP courses and college counseling prepared me perfectly for university. I'm grateful for the foundation built here."</p>
+                        <div class="flex text-yellow-400 mt-3 sm:mt-4 text-xs sm:text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Events Section -->
+        <section id="news" class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-10 lg:mb-12 reveal gap-4 px-2 sm:px-0">
+                    <div>
+                        <h2 class="text-primary-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">News & Events</h2>
+                        <h3 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Latest Updates</h3>
+                    </div>
+                    <a href="#" class="text-primary-600 font-semibold hover:text-primary-700 flex items-center group text-sm sm:text-base touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">
+                        View All News <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-0">
+                    <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg card-hover reveal cursor-pointer group touch-feedback" onclick="showToast('Opening article...')">
+                        <div class="relative h-44 sm:h-48 lg:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop" alt="Science Fair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-primary-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-lg">Event</div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div class="p-4 sm:p-5 lg:p-6">
+                            <div class="flex items-center text-xs text-gray-500 mb-2 sm:mb-3">
+                                <i class="far fa-calendar mr-2"></i> March 15, 2026
+                            </div>
+                            <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition line-clamp-2">Annual Science Fair 2026</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Join us for a day of innovation and discovery as students showcase their scientific projects and inventions.</p>
+                            <span class="text-primary-600 font-semibold text-xs sm:text-sm flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg card-hover reveal cursor-pointer group touch-feedback" onclick="showToast('Opening article...')" style="transition-delay: 100ms;">
+                        <div class="relative h-44 sm:h-48 lg:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&h=400&fit=crop" alt="Sports victory" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-green-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-lg">Sports</div>
+                        </div>
+                        <div class="p-4 sm:p-5 lg:p-6">
+                            <div class="flex items-center text-xs text-gray-500 mb-2 sm:mb-3">
+                                <i class="far fa-calendar mr-2"></i> March 12, 2026
+                            </div>
+                            <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition line-clamp-2">Basketball Championship Victory</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Our varsity basketball team brings home the state championship trophy after an incredible season.</p>
+                            <span class="text-primary-600 font-semibold text-xs sm:text-sm flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg card-hover reveal cursor-pointer group touch-feedback md:col-span-2 lg:col-span-1" onclick="showToast('Opening article...')" style="transition-delay: 200ms;">
+                        <div class="relative h-44 sm:h-48 lg:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop" alt="Enrollment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-purple-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold shadow-lg">Announcement</div>
+                        </div>
+                        <div class="p-4 sm:p-5 lg:p-6">
+                            <div class="flex items-center text-xs text-gray-500 mb-2 sm:mb-3">
+                                <i class="far fa-calendar mr-2"></i> March 10, 2026
+                            </div>
+                            <h4 class="font-display text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition line-clamp-2">2025-2026 Enrollment Open</h4>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">Applications are now being accepted for the upcoming academic year. Schedule your campus tour today.</p>
+                            <span class="text-primary-600 font-semibold text-xs sm:text-sm flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-50 to-transparent opacity-50 hidden lg:block"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
+                    <!-- Contact Info -->
+                    <div class="space-y-6 sm:space-y-8 reveal">
+                        <div>
+                            <h2 class="text-primary-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-2">Contact Us</h2>
+                            <h3 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">Begin Your Journey</h3>
+                            <p class="text-gray-600 text-sm sm:text-base lg:text-lg">Ready to join our community? Get in touch with our admissions team to schedule a tour or learn more about our programs.</p>
+                        </div>
+
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-gray-50 transition group cursor-pointer touch-feedback" onclick="copyToClipboard('123 Education Lane, Ikoyi, Lagos, Nigeria')">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center text-primary-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-map-marker-alt text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">Campus Address</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm truncate">123 Education Lane, Ikoyi, Lagos, Nigeria</p>
+                                    <span class="text-xs text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity">Click to copy</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-gray-50 transition group cursor-pointer touch-feedback" onclick="copyToClipboard('+234 801 234 5678')">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-phone text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">Phone</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm">+234 (0) 801 234 5678</p>
+                                    <span class="text-xs text-green-600 opacity-0 group-hover:opacity-100 transition-opacity">Click to copy</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-gray-50 transition group cursor-pointer touch-feedback" onclick="copyToClipboard('admissions@stmarysacademy.edu.ng')">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center text-purple-600 flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fas fa-envelope text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">Email</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm truncate">admissions@stmarysacademy.edu.ng</p>
+                                    <span class="text-xs text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">Click to copy</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/2348012345678" target="_blank" rel="noopener" class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl hover:bg-green-50 transition group cursor-pointer touch-feedback no-underline">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition emotion-hover">
+                                    <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base mb-0.5 sm:mb-1">WhatsApp</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm">Chat with us instantly</p>
+                                    <span class="text-xs text-green-600">Click to open chat</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="flex space-x-3 sm:space-x-4 pt-2 sm:pt-4">
+                            <a href="https://facebook.com" target="_blank" rel="noopener" class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition hover:scale-110 shadow-lg touch-feedback ripple emotion-hover" aria-label="Facebook">
+                                <i class="fab fa-facebook-f text-sm sm:text-base"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener" class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition hover:scale-110 shadow-lg touch-feedback ripple emotion-hover" aria-label="Twitter">
+                                <i class="fab fa-twitter text-sm sm:text-base"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition hover:scale-110 shadow-lg touch-feedback ripple emotion-hover" aria-label="Instagram">
+                                <i class="fab fa-instagram text-sm sm:text-base"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 text-white rounded-full flex items-center justify-center hover:bg-primary-700 transition hover:scale-110 shadow-lg touch-feedback ripple emotion-hover" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-xl reveal border border-gray-100">
+                        <form id="contact-form" class="space-y-4 sm:space-y-6" onsubmit="handleSubmit(event)">
+                            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                                <div class="group">
+                                    <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">First Name *</label>
+                                    <input type="text" required class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 touch-feedback text-sm sm:text-base" placeholder="John">
+                                </div>
+                                <div class="group">
+                                    <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">Last Name *</label>
+                                    <input type="text" required class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 touch-feedback text-sm sm:text-base" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">Email Address *</label>
+                                <input type="email" required class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 touch-feedback text-sm sm:text-base" placeholder="john@example.com">
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">Phone Number</label>
+                                <input type="tel" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 touch-feedback text-sm sm:text-base" placeholder="+234 801 234 5678">
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">Interested Program *</label>
+                                <select required class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 touch-feedback text-sm sm:text-base">
+                                    <option value="">Select a program</option>
+                                    <option value="primary">Primary School (Grades 1-5)</option>
+                                    <option value="middle">Middle School (Grades 6-8)</option>
+                                    <option value="high">High School (Grades 9-12)</option>
+                                </select>
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2 group-focus-within:text-primary-600 transition">Message</label>
+                                <textarea rows="3" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition bg-white hover:border-gray-400 resize-none touch-feedback text-sm sm:text-base" placeholder="Tell us about your child and any questions you have..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 sm:py-4 btn-primary text-white rounded-xl font-semibold text-sm sm:text-base shadow-lg touch-feedback ripple emotion-hover flex items-center justify-center gap-2">
+                                <span class="btn-text flex items-center justify-center gap-2">
+                                    Send Message <i class="fas fa-paper-plane"></i>
+                                </span>
+                            </button>
+                            <p class="text-xs text-gray-500 text-center">We respect your privacy. Your information will never be shared.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 sm:pt-16 lg:pt-20 pb-24 sm:pb-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900"></div>
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 mb-10 sm:mb-12 lg:mb-16">
+                <div class="col-span-2 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg emotion-hover flex-shrink-0">S</div>
+                        <div class="min-w-0">
+                            <h4 class="font-display font-bold text-base sm:text-lg lg:text-xl truncate">St. Mary's Academy</h4>
+                            <p class="text-xs text-gray-400">Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">Nurturing tomorrow's leaders through excellence in education since 2000.</p>
+                    <div class="flex space-x-2 sm:space-x-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary-600 hover:text-white transition touch-feedback emotion-hover" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary-600 hover:text-white transition touch-feedback emotion-hover" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary-600 hover:text-white transition touch-feedback emotion-hover" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-primary-600 hover:text-white transition touch-feedback emotion-hover" aria-label="YouTube">
+                            <i class="fab fa-youtube text-xs sm:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 lg:mb-6">Quick Links</h5>
+                    <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
+                        <li><a href="#about" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback">About Us</a></li>
+                        <li><a href="#programs" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback">Academic Programs</a></li>
+                        <li><a href="#campus" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback">Campus Life</a></li>
+                        <li><a href="#news" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback">News & Events</a></li>
+                        <li><a href="#contact" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 lg:mb-6">Resources</h5>
+                    <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
+                        <li><a href="#" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Parent Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Student Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Lunch Menu</a></li>
+                        <li><a href="#" class="hover:text-white transition hover:translate-x-1 inline-block touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Transportation</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-2 md:col-span-1">
+                    <h5 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 lg:mb-6">Newsletter</h5>
+                    <p class="text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm">Subscribe for updates and school news.</p>
+                    <form class="flex gap-2" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!'); createConfetti(this);">
+                        <input type="email" placeholder="Your email" required class="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 text-xs sm:text-sm touch-feedback">
+                        <button type="submit" class="px-3 sm:px-4 py-2.5 sm:py-3 bg-primary-600 rounded-xl hover:bg-primary-700 transition touch-feedback ripple emotion-hover flex-shrink-0">
+                            <i class="fas fa-paper-plane text-xs sm:text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+                <p class="text-gray-500 text-xs sm:text-sm text-center sm:text-left">&copy; 2026 St. Mary's Academy. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition touch-feedback" onclick="event.preventDefault(); showToast('Coming soon!')">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav md:hidden" aria-label="Mobile navigation">
+        <a href="#about" class="bottom-nav-item active touch-feedback" aria-label="About">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="#programs" class="bottom-nav-item touch-feedback" aria-label="Programs">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Programs</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item touch-feedback" aria-label="Contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="#" class="bottom-nav-item touch-feedback" onclick="event.preventDefault(); toggleAccessibility()" aria-label="Accessibility">
+            <i class="fas fa-universal-access"></i>
+            <span>Access</span>
+        </a>
+    </nav>
+
+    <!-- Accessibility Widget (Desktop) -->
+    <div class="fixed bottom-6 right-6 z-40 hidden md:block">
+        <button onclick="toggleAccessibility()" class="w-12 h-12 lg:w-14 lg:h-14 bg-primary-600 text-white rounded-full shadow-2xl hover:bg-primary-700 transition flex items-center justify-center text-lg lg:text-xl touch-feedback ripple animate-pulse-slow emotion-hover" title="Accessibility Options" aria-label="Accessibility options">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div id="accessibility-menu" class="hidden">
+            <h4 class="font-semibold mb-3 text-gray-900 flex items-center gap-2 text-sm">
+                <i class="fas fa-universal-access text-primary-600"></i> Accessibility
+            </h4>
+            <div class="space-y-2">
+                <button onclick="toggleFontSize()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-sm flex items-center transition touch-feedback">
+                    <i class="fas fa-text-height mr-3 text-primary-600 w-5"></i> 
+                    <span id="font-size-label">Increase Font Size</span>
+                </button>
+                <button onclick="toggleContrast()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-sm flex items-center transition touch-feedback">
+                    <i class="fas fa-adjust mr-3 text-primary-600 w-5"></i> 
+                    <span id="contrast-label">High Contrast</span>
+                </button>
+                <button onclick="toggleDyslexia()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-sm flex items-center transition touch-feedback">
+                    <i class="fas fa-font mr-3 text-primary-600 w-5"></i> 
+                    <span id="dyslexia-label">Dyslexia Friendly</span>
+                </button>
+                <button onclick="toggleReduceMotion()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 text-sm flex items-center transition touch-feedback">
+                    <i class="fas fa-pause-circle mr-3 text-primary-600 w-5"></i> 
+                    <span id="motion-label">Reduce Motion</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 left-4 sm:bottom-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 text-white rounded-full shadow-2xl hover:bg-gray-800 transition opacity-0 pointer-events-none z-40 flex items-center justify-center touch-feedback ripple emotion-hover" aria-label="Back to top">
+        <i class="fas fa-arrow-up text-sm sm:text-base"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast bg-white border-l-4 border-primary-600 shadow-2xl rounded-xl p-4">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 flex-shrink-0">
+                <i class="fas fa-check text-sm sm:text-base"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-gray-900 text-sm">Success</h4>
+                <p id="toast-message" class="text-gray-600 text-xs sm:text-sm truncate">Operation completed successfully.</p>
+            </div>
+            <button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 touch-feedback p-1 flex-shrink-0">
+                <i class="fas fa-times text-sm"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Program Detail Modal -->
+    <div id="program-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Program details">
+        <div class="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full p-5 sm:p-8 relative transform scale-95 transition-transform duration-300 max-h-[85vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeProgramModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition touch-feedback z-10" aria-label="Close modal">
+                <i class="fas fa-times text-gray-600 text-sm sm:text-base"></i>
+            </button>
+            <div id="program-modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // Register GSAP ScrollTrigger
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
+        // Mobile Menu Toggle - Fixed
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
+        
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.remove('hidden');
+            setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+            mobileMenuBtn.classList.add('hamburger-active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.add('opacity-0');
+            setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+            mobileMenuBtn.classList.remove('hamburger-active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        // Navbar Scroll Effect - Fixed
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+        
+        let lastScroll = 0;
+        let ticking = false;
+        
+        function updateNavbar() {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('shadow-md');
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                navbar.classList.remove('shadow-md');
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+            
+            // Hide/show navbar on scroll down/up with threshold
+            if (currentScroll > lastScroll && currentScroll > 100 && currentScroll > 300) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+            
+            // Update bottom nav active state
+            updateBottomNav();
+            
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        });
+
+        // Update bottom navigation active state
+        function updateBottomNav() {
+            const sections = ['about', 'programs', 'contact'];
+            const scrollPos = window.scrollY + 200;
+            
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const navItem = document.querySelector(`.bottom-nav a[href="#${section}"]`);
+                
+                if (element && navItem) {
+                    const top = element.offsetTop;
+                    const bottom = top + element.offsetHeight;
+                    
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
+                        navItem.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Scroll Reveal Animation - Optimized
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Animate stagger children
+                    if (entry.target.classList.contains('stagger-children')) {
+                        entry.target.classList.add('active');
+                    }
+                    
+                    // Animate counters
+                    if (entry.target.querySelector('.stats-counter')) {
+                        animateCounters(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .stagger-children').forEach(el => observer.observe(el));
+
+        // Counter Animation - Optimized
+        function animateCounters(container) {
+            container.querySelectorAll('.stats-counter').forEach(counter => {
+                if (counter.classList.contains('animated')) return;
+                counter.classList.add('animated');
+                
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const startTime = performance.now();
+                
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+                    const current = Math.floor(easeProgress * target);
+                    
+                    counter.textContent = current + (counter.parentElement.textContent.includes('%') ? '%' : '+');
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + (counter.parentElement.textContent.includes('%') ? '%' : '+');
+                    }
+                }
+                
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // Click to animate counter
+        function animateCounter(element) {
+            const counter = element.querySelector('.stats-counter');
+            counter.classList.remove('animated');
+            animateCounters(element);
+        }
+
+        // Program Modal - Fixed
+        const programDetails = {
+            primary: {
+                title: 'Primary School Program (Grades 1-5)',
+                content: `
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center text-blue-600 mb-4">
+                            <i class="fas fa-child text-2xl sm:text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Foundation Years</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Our primary program focuses on building strong foundational skills in literacy, numeracy, and social development. We use a play-based approach combined with structured learning to ensure every child thrives.</p>
+                        <div class="grid sm:grid-cols-2 gap-4 my-4 sm:my-6">
+                            <div class="bg-blue-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-primary-900 mb-2 text-sm">Core Curriculum</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• Language Arts & Literacy</li>
+                                    <li>• Mathematics</li>
+                                    <li>• Science Exploration</li>
+                                    <li>• Social Studies</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-green-900 mb-2 text-sm">Specials</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• Art & Creativity</li>
+                                    <li>• Music & Movement</li>
+                                    <li>• Physical Education</li>
+                                    <li>• Library Time</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onclick="closeProgramModal()" class="w-full py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition touch-feedback ripple text-sm sm:text-base">Close</button>
+                    </div>
+                `
+            },
+            middle: {
+                title: 'Middle School Program (Grades 6-8)',
+                content: `
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center text-indigo-600 mb-4">
+                            <i class="fas fa-book-reader text-2xl sm:text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Discovery & Growth</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Middle school is a time of transition and discovery. Our program supports students through these crucial years with specialized subject teachers and opportunities to explore interests.</p>
+                        <div class="grid sm:grid-cols-2 gap-4 my-4 sm:my-6">
+                            <div class="bg-indigo-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-indigo-900 mb-2 text-sm">Academic Focus</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• Advanced Mathematics</li>
+                                    <li>• Laboratory Sciences</li>
+                                    <li>• Literature & Composition</li>
+                                    <li>• World History & Geography</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-purple-900 mb-2 text-sm">Electives</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• Coding & Robotics</li>
+                                    <li>• Performing Arts</li>
+                                    <li>• Visual Arts & Design</li>
+                                    <li>• Foreign Languages</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onclick="closeProgramModal()" class="w-full py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition touch-feedback ripple text-sm sm:text-base">Close</button>
+                    </div>
+                `
+            },
+            high: {
+                title: 'High School Program (Grades 9-12)',
+                content: `
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center text-purple-600 mb-4">
+                            <i class="fas fa-user-graduate text-2xl sm:text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">College Preparation</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Our rigorous high school program prepares students for top universities worldwide. With AP courses, individualized college counseling, and leadership opportunities, graduates are ready for success.</p>
+                        <div class="grid sm:grid-cols-2 gap-4 my-4 sm:my-6">
+                            <div class="bg-purple-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-purple-900 mb-2 text-sm">Advanced Academics</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• 15+ AP Courses</li>
+                                    <li>• Honors Tracks</li>
+                                    <li>• Independent Research</li>
+                                    <li>• STEM Concentration</li>
+                                </ul>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-xl">
+                                <h4 class="font-semibold text-orange-900 mb-2 text-sm">College Prep</h4>
+                                <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                                    <li>• SAT/ACT Preparation</li>
+                                    <li>• College Counseling</li>
+                                    <li>• Essay Writing Workshop</li>
+                                    <li>• University Visits</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onclick="closeProgramModal()" class="w-full py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition touch-feedback ripple text-sm sm:text-base">Close</button>
+                    </div>
+                `
+            }
+        };
+
+        function showProgramDetails(program) {
+            const modal = document.getElementById('program-modal');
+            const content = document.getElementById('program-modal-content');
+            content.innerHTML = programDetails[program].content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProgramModal() {
+            const modal = document.getElementById('program-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        // Virtual Tour
+        function openVirtualTour() {
+            showToast('Launching Virtual Tour...');
+            setTimeout(() => {
+                alert('Virtual Tour Feature: This would open an interactive 360° campus tour experience. Imagine walking through our science labs, library, sports facilities, and classrooms!');
+            }, 500);
+        }
+
+        // Form Handling - Fixed
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                showToast('Thank you! Our admissions team will contact you within 24 hours.');
+                createConfetti(btn);
+                e.target.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        // Toast Notification System - Fixed
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(hideToast, 4000);
+        }
+
+        function hideToast() {
+            document.getElementById('toast').classList.remove('show');
+        }
+
+        // Copy to Clipboard - Fixed
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Copied to clipboard!');
+                }).catch(() => {
+                    fallbackCopyToClipboard(text);
+                });
+            } else {
+                fallbackCopyToClipboard(text);
+            }
+        }
+
+        function fallbackCopyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('Copied to clipboard!');
+            } catch (err) {
+                showToast('Failed to copy');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Confetti Effect - Optimized
+        function createConfetti(element) {
+            const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+            const rect = element.getBoundingClientRect();
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = rect.left + rect.width / 2 + 'px';
+                confetti.style.top = rect.top + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetti.style.width = Math.random() * 8 + 4 + 'px';
+                confetti.style.height = Math.random() * 8 + 4 + 'px';
+                
+                const angle = (Math.random() * 360) * (Math.PI / 180);
+                const velocity = 5 + Math.random() * 10;
+                const tx = Math.cos(angle) * velocity * 15;
+                const ty = Math.sin(angle) * velocity * 15 - 100;
+                
+                document.body.appendChild(confetti);
+                
+                // Use CSS animations instead of GSAP for better performance
+                confetti.animate([
+                    { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                    { transform: `translate(${tx}px, ${ty}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 500,
+                    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }).onfinish = () => confetti.remove();
+            }
+        }
+
+        // Accessibility Features - Fixed
+        let fontSizeLarge = false;
+        let highContrast = false;
+        let dyslexiaFont = false;
+        let reduceMotion = false;
+
+        function toggleAccessibility() {
+            const menu = document.getElementById('accessibility-menu');
+            menu.classList.toggle('hidden');
+            
+            // Close when clicking outside
+            if (!menu.classList.contains('hidden')) {
+                setTimeout(() => {
+                    document.addEventListener('click', closeAccessibilityMenu);
+                }, 100);
+            }
+        }
+
+        function closeAccessibilityMenu(e) {
+            const menu = document.getElementById('accessibility-menu');
+            const button = document.querySelector('[onclick="toggleAccessibility()"]');
+            if (!menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeAccessibilityMenu);
+            }
+        }
+
+        function toggleFontSize() {
+            fontSizeLarge = !fontSizeLarge;
+            document.body.classList.toggle('large-text', fontSizeLarge);
+            document.getElementById('font-size-label').textContent = fontSizeLarge ? 'Reset Font Size' : 'Increase Font Size';
+            showToast(fontSizeLarge ? 'Font size increased' : 'Font size reset');
+        }
+
+        function toggleContrast() {
+            highContrast = !highContrast;
+            document.body.classList.toggle('high-contrast', highContrast);
+            document.getElementById('contrast-label').textContent = highContrast ? 'Normal Contrast' : 'High Contrast';
+            showToast(highContrast ? 'High contrast mode enabled' : 'Normal contrast restored');
+        }
+
+        function toggleDyslexia() {
+            dyslexiaFont = !dyslexiaFont;
+            document.body.classList.toggle('dyslexia-friendly', dyslexiaFont);
+            document.getElementById('dyslexia-label').textContent = dyslexiaFont ? 'Standard Font' : 'Dyslexia Friendly';
+            showToast(dyslexiaFont ? 'Dyslexia-friendly font enabled' : 'Standard font restored');
+        }
+
+        function toggleReduceMotion() {
+            reduceMotion = !reduceMotion;
+            document.body.classList.toggle('reduce-motion', reduceMotion);
+            document.getElementById('motion-label').textContent = reduceMotion ? 'Enable Motion' : 'Reduce Motion';
+            showToast(reduceMotion ? 'Motion reduced' : 'Motion enabled');
+        }
+
+        // Create Particles - Desktop only
+        function createParticles() {
+            if (window.innerWidth < 768) return; // Skip on mobile
+            
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles after page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', createParticles);
+        } else {
+            createParticles();
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('program-modal');
+            if (event.target === modal) {
+                closeProgramModal();
+            }
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeProgramModal();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Account for fixed header
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // GSAP Animations - Only if not reduced motion
+        if (typeof gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.from('.hero-title', {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: 0.2
+            });
+
+            gsap.from('.hero-subtitle', {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: 0.4
+            });
+
+            gsap.from('.hero-buttons', {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: 0.6
+            });
+
+            gsap.from('.hero-social', {
+                opacity: 0,
+                y: 15,
+                duration: 0.8,
+                ease: 'power3.out',
+                delay: 0.8
+            });
+        }
+
+        // Touch feedback optimization
+        document.querySelectorAll('.touch-feedback').forEach(el => {
+            el.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, {passive: true});
+            
+            el.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, {passive: true});
+        });
+
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, {passive: false});
+
+        // Handle visibility change to pause animations
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                document.body.classList.add('reduce-motion');
+            } else if (!reduceMotion) {
+                document.body.classList.remove('reduce-motion');
+            }
+        });
+    </script>
+</body>
+</html>
